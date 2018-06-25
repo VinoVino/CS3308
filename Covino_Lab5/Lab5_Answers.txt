@@ -1,0 +1,55 @@
+James Covino
+1 .Download boxes.html and boxes.css from moodle. Place both of them in the same directory, then open boxes.html using either Mozilla Firefox or Google Chrome.
+Right click on the webpage to inspect the elements (“Inspect Element” in Firefox, “Inspect” in Chrome).
+
+2.Give div1 a new background color. What css rule did you use? How would you write it in a css file so that only this div gets the new background color?
+	I call on the id using
+		#div1{
+			background-color:red;}
+
+2.1 Edit the margin and padding attributes of the divs. What does changing the margin do? What does changing the padding do?
+	Padding defines the space inside the element and the border. 
+	Padding is the space that's inside the element between the element and the border. CSS padding 		adjustments are allowed on all four sides of the element.
+	Margin is the space between the border and next element.
+
+3. Now change the background color of the <p> element inside div 1 to yellow.
+	#div1 p{
+	background-color: yellow;}
+
+3.1 Change the margin and padding of the yellow <p>. What happens if the margin is greater than 100px? What happens if the padding is greater than 100px?
+	As the margin is increased then the distance between each box (element) top and left side of screen is 	increased. Since the action is done upon the p element, the text "1" is moved. At a setting of 100 the 	1 moves outside of the div1 box.
+
+	As the padding is made bigger the selected element is stretched out and made bigger. Since the action 	is done upon the p element, the yellow text "1" is moved down into the div2 box
+
+
+3.2 Keeping the padding greater than 100px, change the overflow of div1. What is the difference between scroll and hidden?
+	The overflow property specifies what should happen if content overflows an element's box.
+	scroll: The overflow is clipped, but a scroll-bar is added to see the rest of the content
+	hidden: The overflow is clipped, and the rest of the content will be invisible
+
+
+4. Refresh the page to return the divs to their original states.
+4.1 Give all divs the float: left attribute. What order are they in? What if they all have the float: right attribute instead?
+	Float Left- they are now horizontal in a single row: 1,2,3  (left to right) - with 1 touching top left 	screen border
+	Float Right-they are still horizontal in a single row but 3,2,1 (left to right) - with 1 touching top 	right screen border.
+
+4.2 Keeping all divs with the float: right attribute, give each one in turn the two attributes float: left and clear: right. Describe the relative positions of the boxes with each combination.
+
+#div1{
+	float:left;
+	clear: right;} 
+	Results in box 1 being on the top left border,  3,2 on right top border, with all on the same row.
+
+#div2{
+	float:left;
+	clear: right;} 
+	Results in box 2 on the left top border, 1 box down space from the top. Box 1 and 3 are aligned 	vertically (same column) on far top right corner.
+
+#div3{
+	float:left;
+	clear: right;}
+	Results in box 3 on the left top border, 1 box down space from the top. Box 2 and 1 are aligned 	horizontally (same row) on far top right corner
+
+5.Refresh the page to return the divs to their original states. 
+Give the body element a margin value of 0px. What changes? What does this tell you about the default margin value?
+	No Change. The default is Margin at 0. With this example a Margin of 0 has no space between the box 	element.

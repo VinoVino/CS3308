@@ -1,0 +1,9 @@
+Q: What have we learned so far from this class?
+A: We have learned useful things such as RegEx, Agile and Waterfall methodologies, Git and HTML/CSS!
+
+Q:What are the things needed for Bootstrap to be loaded?
+A: 1) Requires BootStrap CSS. 2) Bootstrap requires jQuery, Popper.js and JavaScript Plugins
+
+
+Q: How does Bootstrap's Grid system work?
+A: The bootstrap system creates a grid on the page with 12 units/columns that the user can use while assembling a page. The framework provides offsets and wrapping. Users’ define the utilized units with classes. The number provided in the .col call dictates how many columns or the width the section is going to take up. Using the Grid system the user is structuring and defining how much room each element is going to take up in a discrete page structure of 12 units.
