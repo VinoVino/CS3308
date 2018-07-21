@@ -1,0 +1,6 @@
+# Editor Cruft
+*~
+
+# Python Cruft
+__pycache__/
+*.py[cod]
