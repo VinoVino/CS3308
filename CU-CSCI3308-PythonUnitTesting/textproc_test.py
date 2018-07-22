@@ -34,7 +34,8 @@ class TextprocTestCase(unittest.TestCase):
 
     def test_constructor(self):
         # verify the constructor raises an error if not passed a string
-        test_input = [9, True]
+        # test int, float and binary as input to test
+        test_input = [9, 9.0, True]
         for test in test_input:
             test_result = False
             try:
