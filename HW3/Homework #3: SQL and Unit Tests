@@ -1,0 +1,92 @@
+Homework #3: SQL and Unit Tests
+
+-------------------------------
+Database Creation Script
+
+Create a python file storedb.py that initializes a database with the schema described in Textbook diagram 9-1. Note that sqlite has slightly different (and optional) types compared to most databases, see SQL as understood by SQLite. Use import sqlite3. The function should define a function create that takes a single argument, for the sqlite3 database filename:
+
+def create(dbname):
+    conn = sqlite3.connect(dbname)
+    ...
+
+You will need four CREATE TABLE statements in your script. You can use rowid as the primary key for each of the four tables.
+
+
+
+
+
+
+-------------------------------
+Filling the database
+Create a second function fill that uses inserts to add values to each of the four tables. You should have at least two rows in each table.
+
+def fill(dbname):
+    conn = sqlite3.connect(dbname)
+    ...
+Insert a few categories into the table Category.
+Insert a few stores into the table Store.
+Insert into Product. Use an insert with a select sub-query on Category to get the correct rowid.
+Finally insert into Store_Product. Take care to ensure that ProductID and StoreID correctly match the rowids of their respective tables.
+You can insert whatever values you like as long as they make sense and match the database schema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------
+Python unit tests on SQL
+Write a seperate file test.py that imports unittest and storedb. 
+Write a class with a set of python unittests to test your create and fill functions. Your python test code should:
+
+Implement a setUp method that creates a new sqlite3 database file test.db and runs both functions.
+See setUp() and tearDown()
+
+Implement a tearDown method that deletes the test.db
+
+Implement four test functions 
+test_category, 
+test_store, 
+test_product, 
+test_store_product.
+Each test should run a SELECT statement on the table, and assert that the results are what you expect them to be.
+
+
+
+
+
+-------------------------------
+write unit tests for addProduct
+Write two new testcases in test.py for new functions addProduct and removeProduct. These functions should take the following arguments:
+
+addProduct(name, price, categoryID, description)
+Write tests for the following behavior:
+
+addProduct should raise a ValueError if name or description are empty or not strings.
+
+addProduct should raise a ValueError if price is less than 0 or not a number.
+
+addProduct should raise a ValueError if categoryID is not a valid rowid in the category table.
+if addProduct returns successfully, the product table should have a new row in it with the correct information.
+You should write all the tests first, and verify that they fail.
+
+
+-------------------------------
+Implement addProduct
+Define a new function addProduct in storedb.py that fulfills the test requirements in test.py. You can use the following python statement to raise a ValueError:
+
+raise ValueError
+Your addProduct function will need to SELECT from the category table.
+
+
+
+Turn it in:
+Zip storedb.py and test.py functions and upload them for credit.
+
